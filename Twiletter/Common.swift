@@ -95,8 +95,8 @@ public class Tweet: NSObject {
         self.isRetweet = (json["retweeted_status"].object != nil)
         if (self.isRetweet) {
             self.id = json["retweeted_status"]["id_str"].string!
-            self.text = json["retweeted_status"]["text"].string!
-            self.name = json["retweeted_status"]["user"]["name"].string!
+            self.text = json["retweeted_status"]["text"].string!.decoded
+            self.name = json["retweeted_status"]["user"]["name"].string!.decoded
             self.screenName = json["retweeted_status"]["user"]["screen_name"].string!
             self.profileImage = URL(string: json["retweeted_status"]["user"]["profile_image_url_https"].string!.replacingOccurrences(of: "_normal", with: ""))!
             self.createdAt = json["retweeted_status"]["created_at"].string!.toDate
@@ -110,8 +110,8 @@ public class Tweet: NSObject {
             self.retweetedUserInfo = Tweet(retweetedJson: json)
         } else {
             self.id = json["id_str"].string!
-            self.text = json["text"].string!
-            self.name = json["user"]["name"].string!
+            self.text = json["text"].string!.decoded
+            self.name = json["user"]["name"].string!.decoded
             self.screenName = json["user"]["screen_name"].string!
             self.profileImage = URL(string: json["user"]["profile_image_url_https"].string!.replacingOccurrences(of: "_normal", with: ""))!
             self.createdAt = json["created_at"].string!.toDate
@@ -129,8 +129,8 @@ public class Tweet: NSObject {
     public init(retweetedJson json: JSON) {
         self.id = json["id_str"].string!
         self.isRetweet = false
-        self.text = json["text"].string!
-        self.name = json["user"]["name"].string!
+        self.text = json["text"].string!.decoded
+        self.name = json["user"]["name"].string!.decoded
         self.screenName = json["user"]["screen_name"].string!
         self.profileImage = URL(string: json["user"]["profile_image_url_https"].string!.replacingOccurrences(of: "_normal", with: ""))!
         self.createdAt = json["created_at"].string!.toDate
@@ -212,6 +212,14 @@ extension UIColor {
         return UIColor.rgbColor(rgbValue: 0xFFFF00)
     }
     
+    class var linkLightBlue: UIColor {
+        return UIColor.rgbColor(rgbValue: 0x1b95e0)
+    }
+    
+    class var linkBlue: UIColor {
+        return UIColor.rgbColor(rgbValue: 0x1da1f2)
+    }
+    
     class func rgbColor(rgbValue: UInt) -> UIColor{
         return UIColor(
             red:   CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -225,6 +233,22 @@ extension UIColor {
 extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
+    }
+    
+    var encoded: String {
+        if let encodedString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            return encodedString
+        } else {
+            return self
+        }
+    }
+    
+    var decoded: String {
+        if let decodedString = self.removingPercentEncoding {
+            return decodedString
+        } else {
+            return self
+        }
     }
     
     var toDate: Date {
@@ -242,25 +266,31 @@ extension String {
         return URL(string: self.components(separatedBy: "\"")[1])!
     }
     
-    func ranges(of string: String) -> [Range<String.Index>] {
-        var ranges: [Range<String.Index>] = []
-        var start = 0
-        while true {
-            let range = self.range(of: string, range: Range(NSMakeRange(0, self.count - 1), in: self))
-            print(range)
-            if let safeRange = range {
-                ranges.append(safeRange)
-                start = self.distance(from: self.startIndex, to: safeRange.lowerBound)
-            } else {
-                break
-            }
-        }
-        return ranges
+    func substring(with nsrange: NSRange) -> Substring? {
+        guard let range = Range(nsrange, in: self) else { return nil }
+        return self[range]
     }
     
-//    var attributed: NSAttributedString {
-//
-//    }
+    func attributed(size: CGFloat) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: self)
+        var index = self.unicodeScalars.startIndex
+        for wordWithBigSpace in self.components(separatedBy: .whitespacesAndNewlines) {
+            for word in wordWithBigSpace.components(separatedBy: "　") {
+                for keyword in ["http://", "https://", "@", "#"] {
+                    if word.contains(keyword) {
+                        let custom = word.unicodeScalars.distance(from: word.unicodeScalars.startIndex, to: word.range(of: keyword, options: .backwards)!.lowerBound)
+                        let from = self.unicodeScalars.index(index, offsetBy: custom)
+                        let to = self.unicodeScalars.index(index, offsetBy: word.unicodeScalars.count)
+                        let range = NSRange(from ..< to, in: self)
+                        attributedString.addAttribute(.link, value: "twiletter://?type=\(keyword)&link=\(self.substring(with: range)!)".encoded, range: range)
+                    }
+                }
+                index = self.unicodeScalars.index(index, offsetBy: word.unicodeScalars.count + 1)
+            }
+        }
+        attributedString.addAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: size)], range: NSRange(self.startIndex ..< self.endIndex, in: self))
+        return attributedString
+    }
 }
 
 extension Date {
@@ -323,5 +353,12 @@ extension UIAlertController {
     
     func show(on: UIViewController = UIApplication.shared.topViewController!) {
         on.present(self, animated: true, completion: nil)
+    }
+}
+
+extension URL {
+    func valueOf(key: String) -> String? {
+        guard let url = URLComponents(string: self.absoluteString) else { return nil }
+        return url.queryItems?.first(where: { $0.name == key })?.value?.decoded
     }
 }

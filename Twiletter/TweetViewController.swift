@@ -52,7 +52,8 @@ class TweetViewController: UITableViewController {
             cell.nameLabel.text = tweet.name
             cell.screenNameLabel.text = "@\(tweet.screenName)"
             cell.createdAtLabel.text = tweet.createdAt.toString
-            cell.tweetTextView.text = tweet.text
+            cell.tweetTextView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.linkLightBlue]
+            cell.tweetTextView.attributedText = tweet.text.attributed(size: 19)
             cell.tweetTextView.textContainerInset = .zero
             cell.tweetTextView.textContainer.lineFragmentPadding = 0
             cell.replyButton.addTarget(self, action: #selector(reply), for: .touchUpInside)

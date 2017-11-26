@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C4835581FCA9C3F00B3080A /* ResponsiveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4835571FCA9C3F00B3080A /* ResponsiveTextView.swift */; };
 		4C5B96421FC5DA990095AF9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96411FC5DA990095AF9E /* SearchViewController.swift */; };
 		4C5B96441FC5DAAD0095AF9E /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96431FC5DAAD0095AF9E /* MessageViewController.swift */; };
 		4C5B96461FC5DABF0095AF9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96451FC5DABF0095AF9E /* ProfileViewController.swift */; };
@@ -189,6 +190,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C4835571FCA9C3F00B3080A /* ResponsiveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveTextView.swift; sourceTree = "<group>"; };
 		4C5B96411FC5DA990095AF9E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4C5B96431FC5DAAD0095AF9E /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		4C5B96451FC5DABF0095AF9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				4C7BFD1F1FC54FE3007792A5 /* Assets.xcassets */,
 				4C7BFD241FC54FE3007792A5 /* Info.plist */,
 				4C5B96531FC663F80095AF9E /* Common.swift */,
+				4C4835571FCA9C3F00B3080A /* ResponsiveTextView.swift */,
 			);
 			path = Twiletter;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C5B96541FC663F80095AF9E /* Common.swift in Sources */,
+				4C4835581FCA9C3F00B3080A /* ResponsiveTextView.swift in Sources */,
 				4C5B96461FC5DABF0095AF9E /* ProfileViewController.swift in Sources */,
 				4CA3EAD71FC9642A0083698A /* TweetViewController.swift in Sources */,
 				4C5B96521FC5E5120095AF9E /* AddAccountViewController.swift in Sources */,

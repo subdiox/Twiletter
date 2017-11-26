@@ -28,7 +28,7 @@ import Foundation
 public extension Swifter {
 
     // Convenience method
-    private func getTimeline(at path: String, parameters: Dictionary<String, Any>, count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeEntities: Bool? = nil, includeReplyCount: Int? = 1, tweetMode: TweetMode = TweetMode.default, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    private func getTimeline(at path: String, parameters: Dictionary<String, Any>, count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeEntities: Bool? = nil, includeReplyCount: Int? = 1, tweetMode: TweetMode = TweetMode.extended, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         var params = parameters
         params["count"] ??= count
         params["since_id"] ??= sinceID
@@ -38,6 +38,7 @@ public extension Swifter {
         params["include_entities"] ??= includeEntities
         params["include_reply_count"] ??= includeReplyCount
         params["tweet_mode"] ??= tweetMode.stringValue
+        
 
         self.getJSON(path: path, baseURL: .api, parameters: params, success: { json, _ in
             success?(json)

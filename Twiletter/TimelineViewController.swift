@@ -45,8 +45,6 @@ class TimelineViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("wotbmx I want a unko or a chimpo #iuroiepeou erwopa".ranges(of: "a"))
-        
         refreshControl = UIRefreshControl()
         refreshControl?.attributedTitle = NSAttributedString(string: "pull_to_refresh".localized)
         refreshControl?.addTarget(self, action: #selector(refreshTweets), for: .valueChanged)
@@ -109,8 +107,9 @@ class TimelineViewController: UITableViewController {
         let row = indexPath.row
         cell.nameLabel.text = tweets[row].name
         cell.screenNameLabel.text = "@\(tweets[row].screenName)"
-        cell.tweetTextView.text = tweets[row].text
-        cell.tweetTextView.textContainerInset = .zero
+        cell.tweetTextView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.linkLightBlue]
+        cell.tweetTextView.attributedText = tweets[row].text.attributed(size: 15)
+                cell.tweetTextView.textContainerInset = .zero
         cell.tweetTextView.textContainer.lineFragmentPadding = 0
         cell.profileImageButton.layer.cornerRadius = cell.profileImageButton.frame.width / 2
         cell.profileImageButton.clipsToBounds = true
