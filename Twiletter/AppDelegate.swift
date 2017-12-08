@@ -45,19 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func processParameters(of url: URL) {
-        if let type = url.valueOf(key: "type") {
-            if let link = url.valueOf(key: "link") {
-                if type == "http://" {
-                    print("Open\(link)")
-                } else if type == "https://" {
-                    print("Open \(link)")
-                } else if type == "@" {
-                    print("Open mention \(link)")
-                } else if type == "#" {
-                    print("Open hashtag \(link)")
-                }
-            }
-        }
+        print(url.absoluteString)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

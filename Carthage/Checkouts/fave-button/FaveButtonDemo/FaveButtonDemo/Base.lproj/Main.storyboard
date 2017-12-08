@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaveButtonDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0d-Bk-ChU" userLabel="star" customClass="StarButton" customModule="FaveButtonDemo" customModuleProvider="target">
+                                <rect key="frame" x="65.5" y="311.5" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="322-34-sEt"/>
+                                    <constraint firstAttribute="height" constant="44" id="cTY-e3-P2H"/>
+                                </constraints>
+                                <state key="normal" image="star"/>
+                                <connections>
+                                    <action selector="tappedStarButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tt3-PM-XrL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUv-ku-yeg" userLabel="heart" customClass="HeartButton" customModule="FaveButtonDemo" customModuleProvider="target">
+                                <rect key="frame" x="265.5" y="311.5" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ICX-nz-LkC"/>
+                                    <constraint firstAttribute="width" constant="44" id="Xvm-2b-Lnp"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="heart"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="colorfulDots" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedHeartButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xE9-a4-kQR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E0d-Bk-ChU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4y5-XU-k84"/>
+                            <constraint firstItem="E0d-Bk-ChU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-100" id="7Za-XS-4Ko"/>
+                            <constraint firstItem="GUv-ku-yeg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zN-Gw-F4S"/>
+                            <constraint firstItem="GUv-ku-yeg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="100" id="Rd9-k8-Ud6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="heartButton" destination="GUv-ku-yeg" id="Ecv-5p-tFr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.25" y="74.481666666666655"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" width="128" height="128"/>
+        <image name="star" width="128" height="128"/>
+    </resources>
+</document>

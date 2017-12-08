@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C4835581FCA9C3F00B3080A /* ResponsiveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4835571FCA9C3F00B3080A /* ResponsiveTextView.swift */; };
+		4C41899C1FD26A72002E6FD2 /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C41899A1FD26A72002E6FD2 /* SKPhotoBrowser.framework */; };
+		4C41899E1FD26AF2002E6FD2 /* SKPhotoBrowser.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C41899A1FD26A72002E6FD2 /* SKPhotoBrowser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C41899F1FD26AF2002E6FD2 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CA3EAD21FC715390083698A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C4189A01FD26AF2002E6FD2 /* AlamofireImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CA3EAD31FC715390083698A /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C4189A11FD26AF2002E6FD2 /* KeychainAccess.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4CA3EACF1FC694C30083698A /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4C4FC6E21FDA5F6C0099ACB1 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4FC6E11FDA5F6C0099ACB1 /* CustomTextView.swift */; };
 		4C5B96421FC5DA990095AF9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96411FC5DA990095AF9E /* SearchViewController.swift */; };
 		4C5B96441FC5DAAD0095AF9E /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96431FC5DAAD0095AF9E /* MessageViewController.swift */; };
 		4C5B96461FC5DABF0095AF9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5B96451FC5DABF0095AF9E /* ProfileViewController.swift */; };
@@ -28,6 +33,15 @@
 		4CA3EAD41FC7153A0083698A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA3EAD21FC715390083698A /* Alamofire.framework */; };
 		4CA3EAD51FC7153A0083698A /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA3EAD31FC715390083698A /* AlamofireImage.framework */; };
 		4CA3EAD71FC9642A0083698A /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3EAD61FC9642A0083698A /* TweetViewController.swift */; };
+		4CC0E4B81FD5913D0035D0FE /* Constraints+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4B41FD5913A0035D0FE /* Constraints+.swift */; };
+		4CC0E4B91FD5913D0035D0FE /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4B51FD5913C0035D0FE /* Geometry.swift */; };
+		4CC0E4BA1FD5913D0035D0FE /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4B61FD5913D0035D0FE /* Init.swift */; };
+		4CC0E4BB1FD5913D0035D0FE /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4B71FD5913D0035D0FE /* Easing.swift */; };
+		4CC0E4C11FD591610035D0FE /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4BD1FD5915F0035D0FE /* HeartButton.swift */; };
+		4CC0E4C21FD591610035D0FE /* HeartSpark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4BE1FD591600035D0FE /* HeartSpark.swift */; };
+		4CC0E4C31FD591610035D0FE /* HeartIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4BF1FD591610035D0FE /* HeartIcon.swift */; };
+		4CC0E4C41FD591610035D0FE /* HeartRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4C01FD591610035D0FE /* HeartRing.swift */; };
+		4CC0E4C61FD5916B0035D0FE /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC0E4C51FD5916B0035D0FE /* StarButton.swift */; };
 		8B116AF1194601970019A4DC /* SwifterHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B116AF0194601970019A4DC /* SwifterHTTPRequest.swift */; };
 		8B116AF2194601970019A4DC /* SwifterHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B116AF0194601970019A4DC /* SwifterHTTPRequest.swift */; };
 		8B1F259F194A663D004BD304 /* SwifterHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F259E194A663D004BD304 /* SwifterHelp.swift */; };
@@ -161,6 +175,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4C41899E1FD26AF2002E6FD2 /* SKPhotoBrowser.framework in CopyFiles */,
+				4C41899F1FD26AF2002E6FD2 /* Alamofire.framework in CopyFiles */,
+				4C4189A01FD26AF2002E6FD2 /* AlamofireImage.framework in CopyFiles */,
+				4C4189A11FD26AF2002E6FD2 /* KeychainAccess.framework in CopyFiles */,
 				4C5B965A1FC6908F0095AF9E /* SwifteriOS.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,7 +208,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4C4835571FCA9C3F00B3080A /* ResponsiveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveTextView.swift; sourceTree = "<group>"; };
+		4C41899A1FD26A72002E6FD2 /* SKPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKPhotoBrowser.framework; path = Carthage/Build/iOS/SKPhotoBrowser.framework; sourceTree = "<group>"; };
+		4C4FC6E11FDA5F6C0099ACB1 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		4C5B96411FC5DA990095AF9E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4C5B96431FC5DAAD0095AF9E /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		4C5B96451FC5DABF0095AF9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +229,15 @@
 		4CA3EAD21FC715390083698A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4CA3EAD31FC715390083698A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		4CA3EAD61FC9642A0083698A /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		4CC0E4B41FD5913A0035D0FE /* Constraints+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Constraints+.swift"; sourceTree = "<group>"; };
+		4CC0E4B51FD5913C0035D0FE /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		4CC0E4B61FD5913D0035D0FE /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
+		4CC0E4B71FD5913D0035D0FE /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
+		4CC0E4BD1FD5915F0035D0FE /* HeartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		4CC0E4BE1FD591600035D0FE /* HeartSpark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartSpark.swift; sourceTree = "<group>"; };
+		4CC0E4BF1FD591610035D0FE /* HeartIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartIcon.swift; sourceTree = "<group>"; };
+		4CC0E4C01FD591610035D0FE /* HeartRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRing.swift; sourceTree = "<group>"; };
+		4CC0E4C51FD5916B0035D0FE /* StarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
 		8B116AF0194601970019A4DC /* SwifterHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterHTTPRequest.swift; sourceTree = "<group>"; };
 		8B1F259E194A663D004BD304 /* SwifterHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SwifterHelp.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8B300C1F1944AA1A00993175 /* SwifterDemoiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwifterDemoiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +304,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C41899C1FD26A72002E6FD2 /* SKPhotoBrowser.framework in Frameworks */,
 				4CA3EAD41FC7153A0083698A /* Alamofire.framework in Frameworks */,
 				4CA3EAD51FC7153A0083698A /* AlamofireImage.framework in Frameworks */,
 				4CA3EAD01FC694C30083698A /* KeychainAccess.framework in Frameworks */,
@@ -327,6 +356,7 @@
 		4C5B96551FC68F6A0095AF9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C41899A1FD26A72002E6FD2 /* SKPhotoBrowser.framework */,
 				4CA3EAD21FC715390083698A /* Alamofire.framework */,
 				4CA3EAD31FC715390083698A /* AlamofireImage.framework */,
 				4CA3EACF1FC694C30083698A /* KeychainAccess.framework */,
@@ -338,6 +368,21 @@
 			isa = PBXGroup;
 			children = (
 				4C7BFD161FC54FE3007792A5 /* AppDelegate.swift */,
+				4CC0E4B21FD590EB0035D0FE /* ViewControllers */,
+				4CC0E4BC1FD5914D0035D0FE /* FaveButton */,
+				4CC0E4B31FD591110035D0FE /* Utilities */,
+				4C7BFD1C1FC54FE3007792A5 /* Main.storyboard */,
+				4C5B964E1FC5E48E0095AF9E /* Account.storyboard */,
+				4C7BFD211FC54FE3007792A5 /* LaunchScreen.storyboard */,
+				4C7BFD1F1FC54FE3007792A5 /* Assets.xcassets */,
+				4C7BFD241FC54FE3007792A5 /* Info.plist */,
+			);
+			path = Twiletter;
+			sourceTree = "<group>";
+		};
+		4CC0E4B21FD590EB0035D0FE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
 				4C5B96511FC5E5120095AF9E /* AddAccountViewController.swift */,
 				4C7BFD181FC54FE3007792A5 /* TimelineViewController.swift */,
 				4CA3EAD61FC9642A0083698A /* TweetViewController.swift */,
@@ -345,15 +390,33 @@
 				4C7BFD1A1FC54FE3007792A5 /* NotificationViewController.swift */,
 				4C5B96431FC5DAAD0095AF9E /* MessageViewController.swift */,
 				4C5B96451FC5DABF0095AF9E /* ProfileViewController.swift */,
-				4C7BFD1C1FC54FE3007792A5 /* Main.storyboard */,
-				4C5B964E1FC5E48E0095AF9E /* Account.storyboard */,
-				4C7BFD211FC54FE3007792A5 /* LaunchScreen.storyboard */,
-				4C7BFD1F1FC54FE3007792A5 /* Assets.xcassets */,
-				4C7BFD241FC54FE3007792A5 /* Info.plist */,
-				4C5B96531FC663F80095AF9E /* Common.swift */,
-				4C4835571FCA9C3F00B3080A /* ResponsiveTextView.swift */,
 			);
-			path = Twiletter;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4CC0E4B31FD591110035D0FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4CC0E4B41FD5913A0035D0FE /* Constraints+.swift */,
+				4CC0E4B71FD5913D0035D0FE /* Easing.swift */,
+				4CC0E4B51FD5913C0035D0FE /* Geometry.swift */,
+				4CC0E4B61FD5913D0035D0FE /* Init.swift */,
+				4C5B96531FC663F80095AF9E /* Common.swift */,
+				4C4FC6E11FDA5F6C0099ACB1 /* CustomTextView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4CC0E4BC1FD5914D0035D0FE /* FaveButton */ = {
+			isa = PBXGroup;
+			children = (
+				4CC0E4C51FD5916B0035D0FE /* StarButton.swift */,
+				4CC0E4BD1FD5915F0035D0FE /* HeartButton.swift */,
+				4CC0E4BF1FD591610035D0FE /* HeartIcon.swift */,
+				4CC0E4C01FD591610035D0FE /* HeartRing.swift */,
+				4CC0E4BE1FD591600035D0FE /* HeartSpark.swift */,
+			);
+			path = FaveButton;
 			sourceTree = "<group>";
 		};
 		8B300C201944AA1A00993175 /* SwifterDemoiOS */ = {
@@ -536,7 +599,6 @@
 				4C7BFD111FC54FE3007792A5 /* Frameworks */,
 				4C7BFD121FC54FE3007792A5 /* Resources */,
 				4C5B96591FC690390095AF9E /* CopyFiles */,
-				4CA3EAD11FC694E30083698A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -648,7 +710,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = subdiox;
 				TargetAttributes = {
 					4C7BFD131FC54FE3007792A5 = {
@@ -758,33 +820,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4CA3EAD11FC694E30083698A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4C7BFD101FC54FE3007792A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C4FC6E21FDA5F6C0099ACB1 /* CustomTextView.swift in Sources */,
+				4CC0E4C21FD591610035D0FE /* HeartSpark.swift in Sources */,
+				4CC0E4BB1FD5913D0035D0FE /* Easing.swift in Sources */,
+				4CC0E4C61FD5916B0035D0FE /* StarButton.swift in Sources */,
+				4CC0E4BA1FD5913D0035D0FE /* Init.swift in Sources */,
+				4CC0E4B81FD5913D0035D0FE /* Constraints+.swift in Sources */,
+				4CC0E4B91FD5913D0035D0FE /* Geometry.swift in Sources */,
 				4C5B96541FC663F80095AF9E /* Common.swift in Sources */,
-				4C4835581FCA9C3F00B3080A /* ResponsiveTextView.swift in Sources */,
+				4CC0E4C41FD591610035D0FE /* HeartRing.swift in Sources */,
+				4CC0E4C11FD591610035D0FE /* HeartButton.swift in Sources */,
 				4C5B96461FC5DABF0095AF9E /* ProfileViewController.swift in Sources */,
+				4CC0E4C31FD591610035D0FE /* HeartIcon.swift in Sources */,
 				4CA3EAD71FC9642A0083698A /* TweetViewController.swift in Sources */,
 				4C5B96521FC5E5120095AF9E /* AddAccountViewController.swift in Sources */,
 				4C7BFD1B1FC54FE3007792A5 /* NotificationViewController.swift in Sources */,
@@ -1223,7 +1275,7 @@
 		8B9F51051944A5AB00894629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7DVG8XN4BQ;
@@ -1245,7 +1297,7 @@
 		8B9F51061944A5AB00894629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7DVG8XN4BQ;
@@ -1268,7 +1320,7 @@
 		8B9F51261944A61D00894629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1299,7 +1351,7 @@
 		8B9F51271944A61D00894629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
