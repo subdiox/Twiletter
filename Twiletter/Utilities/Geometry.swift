@@ -32,14 +32,14 @@ extension CGRect{
 
 extension CGSize{
     func rectCentered(at:CGPoint) -> CGRect{
-        let dx = self.width/2
-        let dy = self.height/2
+        let dx = self.width / 2
+        let dy = self.height / 2
         let origin = CGPoint(x: at.x - dx, y: at.y - dy )
         return CGRect(origin: origin, size: self)
     }
     
     func scaleBy(_ factor:CGFloat) -> CGSize{
-        return CGSize(width: self.width*factor, height: self.height*factor)
+        return CGSize(width: self.width * factor, height: self.height * factor)
     }
 }
 
@@ -54,12 +54,52 @@ extension Double {
 }
 
 extension UIColor {
-    class func rgb(_ rgbColor: Int) -> UIColor{
+    class func rgb(_ rgb: Int) -> UIColor{
         return UIColor(
-            red:   CGFloat((rgbColor & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbColor & 0x00FF00) >> 8 ) / 255.0,
-            blue:  CGFloat((rgbColor & 0x0000FF) >> 0 ) / 255.0,
+            red:   CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgb & 0x00FF00) >> 8 ) / 255.0,
+            blue:  CGFloat((rgb & 0x0000FF) >> 0 ) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+    
+    class var systemBlue: UIColor {
+        return UIColor.rgb(0x007aff)
+    }
+    
+    class var systemGreen: UIColor {
+        return UIColor.rgb(0x4cd964)
+    }
+    
+    class var systemRed: UIColor {
+        return UIColor.rgb(0xff3b30)
+    }
+    
+    class var systemLightGray: UIColor {
+        return UIColor.rgb(0xf5f5f7)
+    }
+    
+    class var systemGray: UIColor {
+        return UIColor.rgb(0xefeff4)
+    }
+    
+    class var retweetGreen: UIColor {
+        return UIColor.rgb(0x2ecc71)
+    }
+    
+    class var heartRed: UIColor {
+        return UIColor.rgb(0xe74c3c)
+    }
+    
+    class var starYellow: UIColor {
+        return UIColor.rgb(0xFFFF00)
+    }
+    
+    class var linkLightBlue: UIColor {
+        return UIColor.rgb(0x1b95e0)
+    }
+    
+    class var linkBlue: UIColor {
+        return UIColor.rgb(0x1da1f2)
     }
 }

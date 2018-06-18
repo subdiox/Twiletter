@@ -71,22 +71,22 @@ class AddAccountViewController: UITableViewController, UITextFieldDelegate {
         if (indexPath == IndexPath(row: 0, section: 1)) {
             tableView.deselectRow(at: indexPath, animated: true)
             activityIndicator.startAnimating()
-            Common.swifterList.append(Swifter(consumerKey: Consumer.iPhone.key.rawValue, consumerSecret: Consumer.iPhone.secret.rawValue))
-            Common.swifterList[Common.currentAccount].authorizePIN(username: usernameTextField.text!, password: passwordTextField.text!, success: { token, _ in
+            Common.swifters.append(Swifter(consumerKey: Official.iPhone.key.rawValue, consumerSecret: Official.iPhone.secret.rawValue))
+            Common.swifters[Common.currentAccount].authorizePIN(username: usernameTextField.text!, password: passwordTextField.text!, success: { token, _ in
                 let token = token!
                 var included = false
-                for accessToken in Common.tokenList {
+                for accessToken in Common.tokens {
                     if (accessToken.userID == token.userID) {
                         included = true
                     }
                 }
                 if !included {
                     let accessToken = AccessToken(key: token.key, secret: token.secret, screenName: token.screenName!, userID: token.userID!)
-                    Common.tokenList.append(accessToken)
-                    let tokenData = NSKeyedArchiver.archivedData(withRootObject: Common.tokenList)
-                    let keychain = Keychain(service: "twiletter")
+                    Common.tokens.append(accessToken)
+                    let tokensData = NSKeyedArchiver.archivedData(withRootObject: Common.tokens)
+                    let keychain = Keychain(service: Constant.keychainService.rawValue)
                     do {
-                        try keychain.set(tokenData, key: "token")
+                        try keychain.set(tokensData, key: "tokens")
                     } catch let error {
                         print("Error: \(error.localizedDescription)")
                     }
@@ -94,9 +94,12 @@ class AddAccountViewController: UITableViewController, UITextFieldDelegate {
                     print("Error: Your account is already registered")
                 }
                 self.activityIndicator.stopAnimating()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-                self.present(mainViewController, animated: true, completion: nil)
+                self.present(self.viewController(id: "Main"), animated: true, completion: nil)
+            }, failure: { error in
+                self.activityIndicator.stopAnimating()
+                UIAlertController(title: "Error", message: "Username or password is incorrect.", preferredStyle: .alert)
+                    .addAction(title: "OK", style: .default)
+                    .show()
             })
         }
     }

@@ -28,16 +28,18 @@ import Foundation
 public extension Swifter {
 
     // Convenience method
-    private func getTimeline(at path: String, parameters: Dictionary<String, Any>, count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeEntities: Bool? = nil, includeReplyCount: Int? = 1, tweetMode: TweetMode = TweetMode.extended, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    private func getTimeline(at path: String, parameters: Dictionary<String, Any>, count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeCards: Bool? = nil, includeEntities: Bool? = nil, includeReplyCount: Int? = 1, tweetMode: TweetMode = TweetMode.extended, cardsPlatform: CardsPlatform? = nil, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         var params = parameters
         params["count"] ??= count
         params["since_id"] ??= sinceID
         params["max_id"] ??= maxID
         params["trim_user"] ??= trimUser
         params["contributor_details"] ??= contributorDetails
+        params["include_cards"] ??= includeCards
         params["include_entities"] ??= includeEntities
         params["include_reply_count"] ??= includeReplyCount
         params["tweet_mode"] ??= tweetMode.stringValue
+        params["cards_platform"] ??= cardsPlatform?.stringValue
         
 
         self.getJSON(path: path, baseURL: .api, parameters: params, success: { json, _ in
@@ -66,10 +68,10 @@ public extension Swifter {
         The timeline returned is the equivalent of the one seen when you view a user's profile on twitter.com.
         This method can only return up to 3,200 of a user's most recent Tweets. Native retweets of other statuses by the user is included in this total, regardless of whether include_rts is set to false when requesting this resource.
      **/
-    public func getTimeline(for userID: String, count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeEntities: Bool? = nil, tweetMode: TweetMode = TweetMode.default, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+    public func getTimeline(for userID: String, count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeEntities: Bool? = nil, includeCards: Bool? = nil, tweetMode: TweetMode = TweetMode.default, cardsPlatform: CardsPlatform? = nil, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
         let parameters: Dictionary<String, Any> = ["user_id": userID]
 
-        self.getTimeline(at: "statuses/user_timeline.json", parameters: parameters, count: count, sinceID: sinceID, maxID: maxID, trimUser: trimUser, contributorDetails: contributorDetails, includeEntities: includeEntities, tweetMode: tweetMode, success: success, failure: failure)
+        self.getTimeline(at: "statuses/user_timeline.json", parameters: parameters, count: count, sinceID: sinceID, maxID: maxID, trimUser: trimUser, contributorDetails: contributorDetails, includeCards: includeCards, includeEntities: includeEntities, tweetMode: tweetMode, cardsPlatform: cardsPlatform, success: success, failure: failure)
     }
 
     /**
@@ -79,8 +81,8 @@ public extension Swifter {
         Returns a collection of the most recent Tweets and retweets posted by the authenticating user and the users they follow. The home timeline is central to how most users interact with the Twitter service.
         Up to 800 Tweets are obtainable on the home timeline. It is more volatile for users that follow many users or follow users who tweet frequently.
      **/
-    public func getHomeTimeline(count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeEntities: Bool? = nil, includeReplyCount: Int? = 1, tweetMode: TweetMode = TweetMode.default, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
-        self.getTimeline(at: "statuses/home_timeline.json", parameters: [:], count: count, sinceID: sinceID, maxID: maxID, trimUser: trimUser, contributorDetails: contributorDetails, includeEntities: includeEntities, includeReplyCount: includeReplyCount, tweetMode: tweetMode, success: success, failure: failure)
+    public func getHomeTimeline(count: Int? = nil, sinceID: String? = nil, maxID: String? = nil, trimUser: Bool? = nil, contributorDetails: Bool? = nil, includeCards: Bool? = nil, includeEntities: Bool? = nil, includeReplyCount: Int? = 1, tweetMode: TweetMode = TweetMode.extended, cardsPlatform: CardsPlatform? = nil, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {
+        self.getTimeline(at: "statuses/home_timeline.json", parameters: [:], count: count, sinceID: sinceID, maxID: maxID, trimUser: trimUser, contributorDetails: contributorDetails, includeCards: includeCards, includeEntities: includeEntities, includeReplyCount: includeReplyCount, tweetMode: tweetMode, cardsPlatform: cardsPlatform, success: success, failure: failure)
     }
 
     public func getHomeTimeline2(autoplayEnabled: Bool? = false, cardsPlatform: CardsPlatform = CardsPlatform.iphone13, contributorDetails: Int? = 1, count: Int? = 100, cursor: String? = nil, earned: Bool? = true, ext: Ext = Ext.official, includeBlockedBy: Bool? = true, includeBlocking: Bool? = true, includeCards: Int? = 1, includeCarousels: Int? = 1, includeEntities: Int? = 1, includeExtMediaColor: Bool? = true, includeMediaFeatures: Bool? = true, includeMyRetweet: Int? = 1, includeProfileInterstitialType: Bool? = true, includeProfileLocation: Bool? = true, includeReplyCount: Int? = 1, includeUserEntities: Bool? = true, includeUserHashtagEntities: Bool? = true, includeUserMentionEntities: Bool? = true, includeUserSymbolEntities: Bool? = true, lang: String? = "ja", pc: Bool? = true, requestContext: String? = "launch", tweetMode: TweetMode = TweetMode.extended, userID: String?, username: String?, success: SuccessHandler? = nil, failure: FailureHandler? = nil) {

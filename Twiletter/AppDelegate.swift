@@ -17,18 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let keychain = Keychain(service: "twiletter")
-        let tokenData = keychain[data: "token"]
-        if let safeToken = tokenData {
-            Common.tokenList = NSKeyedUnarchiver.unarchiveObject(with: safeToken) as! [AccessToken]
-            for token in Common.tokenList {
-                Common.swifterList.append(Swifter(consumerKey: Consumer.iPhone.key.rawValue, consumerSecret: Consumer.iPhone.secret.rawValue, oauthToken: token.key, oauthTokenSecret: token.secret))
+        let keychain = Keychain(service: Constant.keychainService.rawValue)
+        let tokensData = keychain[data: "tokens"]
+        if let safeToken = tokensData {
+            Common.tokens = NSKeyedUnarchiver.unarchiveObject(with: safeToken) as! [AccessToken]
+            for token in Common.tokens {
+                Common.swifters.append(Swifter(consumerKey: Official.iPhone.key.rawValue, consumerSecret: Official.iPhone.secret.rawValue, oauthToken: token.key, oauthTokenSecret: token.secret))
             }
         }
-        if (Common.swifterList.count > 0) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-            window?.rootViewController = mainViewController
+        if (Common.swifters.count > 0) {
+            window?.rootViewController = self.viewController(id: "Main")
         }
         
         return true

@@ -94,11 +94,11 @@ open class StarButton: UIButton {
     fileprivate func createLayers(image: UIImage!) {
         self.layer.sublayers = nil
         
-        let imageFrame = frame.size.scaleBy(1.43).rectCentered(at: frame.center)
-        let maskFrame = frame.size.scaleBy(1.0).rectCentered(at: frame.center)
-        let ringFrame = frame.size.scaleBy(1.29).rectCentered(at: frame.center)
+        let imageFrame = frame.size.scaleBy(1.2).rectCentered(at: frame.center)
+        let maskFrame = frame.size.scaleBy(0.9).rectCentered(at: frame.center)
+        let ringFrame = frame.size.scaleBy(1.1).rectCentered(at: frame.center)
         let imgCenterPoint = CGPoint(x: imageFrame.midX, y: imageFrame.midY)
-        let lineFrame = frame.size.scaleBy(1.5).rectCentered(at: frame.center)
+        let lineFrame = frame.size.scaleBy(1.35).rectCentered(at: frame.center)
         
         //===============
         // ring layer

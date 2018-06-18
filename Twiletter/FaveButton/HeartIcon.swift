@@ -63,7 +63,7 @@ extension HeartIcon{
     
     func applyInit(){
         let maskRegion  = contentRegion.size.scaleBy(0.9).rectCentered(at: contentRegion.center)
-        let imageRegion = contentRegion.size.scaleBy(1.4).rectCentered(at: contentRegion.center)
+        let imageRegion = contentRegion.size.scaleBy(1.5).rectCentered(at: contentRegion.center)
         let imgCenterPoint = CGPoint(x: imageRegion.midX, y: imageRegion.midY)
 
         iconMask = Init(CALayer()){

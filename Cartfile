@@ -1,5 +1,6 @@
 github "kishikawakatsumi/KeychainAccess"
-github "suzuki-0000/SKPhotoBrowser"
 github "subdiox/fave-button"
 github "Alamofire/Alamofire"
 github "Alamofire/AlamofireImage"
+github "mac-cain13/R.swift.Library"
+github "suzuki-0000/SKPhotoBrowser"
